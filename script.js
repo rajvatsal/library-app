@@ -17,9 +17,9 @@ function addToLibrary(newBook) {
 function readLibrary() {
     for(let book of myLibrary) {
         let card = document.createElement('DIV');
-        let title = document.createElement('DIV');
-        let author = document.createElement('DIV');
-        let pages = document.createElement('DIV');
+        let title = document.createElement('H2');
+        let author = document.createElement('H4');
+        let pages = document.createElement('H4');
         let read = document.createElement('DIV');
         let remove = document.createElement('BUTTON');
         title.textContent = book.title;
