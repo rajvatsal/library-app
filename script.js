@@ -34,10 +34,14 @@ function readLibrary() {
         card.appendChild(read);
         card.appendChild(remove);
         card.classList.add('card');
-        document.querySelector('body').appendChild(card);
+        card.addEventListener('mousedown', (e) => {
+            if(e.target.classList.contains('remove')) e.currentTarget.remove();
+        });
+        document.querySelector('main').appendChild(card);
         console.table(book);
     }
 }
+
 
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, false);
 let anabasisOfAlexander =  new Book("The Anabasis of Alexander", "Xenophon", 281, false);
