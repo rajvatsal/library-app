@@ -52,11 +52,16 @@ const addBook = document.querySelector('body>button:nth-child(2)');
 const form = document.querySelector('form');
 const mask = document.querySelector('.mask');
 const submitButton = document.querySelector('form button');
-addBook.addEventListener('mousedown', (e) => {
+addBook.addEventListener('click', (e) => {
     form.style.display = 'grid';
     mask.style.display = 'block';
 })
-mask.addEventListener('mousedown', (e) => {
+mask.addEventListener('click', (e) => {
+    form.style.display = 'none';
+    mask.style.display = 'none';
+})
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
     form.style.display = 'none';
     mask.style.display = 'none';
 })
