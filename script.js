@@ -38,10 +38,8 @@ function readLibrary() {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
         });
         document.querySelector('main').appendChild(card);
-        console.table(book);
     }
 }
-
 
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, false);
 let anabasisOfAlexander =  new Book("The Anabasis of Alexander", "Xenophon", 281, false);
@@ -49,3 +47,16 @@ let prince = new Book("The Prince", "Niccolo Machiavelli", 164, false);
 let lawsOfPower = new Book("The 48 Laws of Power", "Robert Greene", 496, false);
 addToLibrary([theHobbit, anabasisOfAlexander, prince, lawsOfPower]);
 readLibrary();
+
+const addBook = document.querySelector('body>button:nth-child(2)');
+const form = document.querySelector('form');
+const mask = document.querySelector('.mask');
+const submitButton = document.querySelector('form button');
+addBook.addEventListener('mousedown', (e) => {
+    form.style.display = 'grid';
+    mask.style.display = 'block';
+})
+mask.addEventListener('mousedown', (e) => {
+    form.style.display = 'none';
+    mask.style.display = 'none';
+})
