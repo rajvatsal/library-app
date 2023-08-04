@@ -62,6 +62,4 @@ mask.addEventListener('click', (e) => {
 })
 submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    form.style.display = 'none';
-    mask.style.display = 'none';
 })
