@@ -4,7 +4,7 @@ function Book(title, author, pages, read) {
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.read = this.read? "read": "not read yet"
+    this.read = read? "read": "not read yet";
 }
 Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}.`
@@ -12,10 +12,11 @@ Book.prototype.info = function () {
 
 function addToLibrary(newBook) {
     myLibrary.push(...newBook);
+    readLibrary(newBook)
 }
 
-function readLibrary() {
-    for(let book of myLibrary) {
+function readLibrary(newBook) {
+    for(let book of newBook) {
         let card = document.createElement('DIV');
         let title = document.createElement('H2');
         let author = document.createElement('H4');
@@ -46,20 +47,31 @@ let anabasisOfAlexander =  new Book("The Anabasis of Alexander", "Xenophon", 281
 let prince = new Book("The Prince", "Niccolo Machiavelli", 164, false);
 let lawsOfPower = new Book("The 48 Laws of Power", "Robert Greene", 496, false);
 addToLibrary([theHobbit, anabasisOfAlexander, prince, lawsOfPower]);
-readLibrary();
 
 const addBook = document.querySelector('body>button:nth-child(2)');
 const form = document.querySelector('form');
 const mask = document.querySelector('.mask');
 const submitButton = document.querySelector('form button');
+const body = document.querySelector('body');
 addBook.addEventListener('click', (e) => {
     form.style.display = 'grid';
     mask.style.display = 'block';
+    body.style.setProperty('overflow', 'hidden');
 })
 mask.addEventListener('click', (e) => {
     form.style.display = 'none';
     mask.style.display = 'none';
+    body.style.removeProperty('overflow', 'hidden');
 })
 submitButton.addEventListener('click', (e) => {
-    e.preventDefault();
+    let form = document.querySelector('form');
+    let title = document.getElementById('book_title');
+    let author = document.getElementById('book_author');
+    let pages = document.getElementById('book_pages');
+    let read = document.getElementById('book_read').checked;
+    if(!title.value || !author.value || !pages.value) return
+    else e.preventDefault();
+    let book = new Book(title.value, author.value, pages.value, read);
+    addToLibrary([book]);
+    form.reset();
 })
