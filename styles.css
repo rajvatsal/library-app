@@ -89,7 +89,6 @@ main {
 .card {
     padding: 40px 5px;
     border-radius: 5px;
-    height: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
