@@ -38,17 +38,12 @@ function readLibrary(newBook) {
         card.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
         });
-        document.querySelector('main').appendChild(card);
+        document.querySelector('main').prepend(card);
     }
 }
 
-let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, false);
-let anabasisOfAlexander =  new Book("The Anabasis of Alexander", "Xenophon", 281, false);
-let prince = new Book("The Prince", "Niccolo Machiavelli", 164, false);
-let lawsOfPower = new Book("The 48 Laws of Power", "Robert Greene", 496, false);
-addToLibrary([theHobbit, anabasisOfAlexander, prince, lawsOfPower]);
 
-const addBook = document.querySelector('body>button:nth-child(2)');
+const addBook = document.querySelector('main button:not(.remove)');
 const form = document.querySelector('form');
 const mask = document.querySelector('.mask');
 const submitButton = document.querySelector('form button');
