@@ -59,6 +59,11 @@ const form = document.querySelector('form');
 const submitButton = document.querySelector('form button');
 const body = document.querySelector('body');
 const dialog = document.querySelector('dialog');
+const formRemove = document.querySelector('form :first-child');
+
+formRemove.addEventListener('click', (e) => {
+    dialog.close();
+})
 
 addBook.addEventListener('click', (e) => {
     dialog.showModal();

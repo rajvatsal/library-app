@@ -102,17 +102,16 @@ main {
     background-image: linear-gradient(135deg, #ffa600, red);
 }
 
-.remove {
-    align-self: flex-end;
-    justify-self: flex-end;
-    color: white;
-    width: 25px;
+.remove,
+form img {
+    width: 15px;
     position: absolute;
     top: 5px;
     right: 5px;
 }
 
-.remove:hover {
+.remove:hover,
+form :first-child:hover {
     cursor: pointer;
 }
 
@@ -155,6 +154,7 @@ form {
     padding: 20px 40px;
     width: var(--form-width);
     height: 80vh;
+    position: relative;
 }
 
 form>h1 {
