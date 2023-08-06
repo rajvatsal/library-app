@@ -15,11 +15,11 @@ function addToLibrary(newBook) {
     readLibrary(newBook)
 }
 
-function changeCardColor(read, card) {
+function changeCardColor(read, border) {
         if(read === "read") 
-            card.classList.add('read');
+            border.classList.add('read');
         else 
-            card.classList.add('not-read');
+            border.classList.add('not-read');
 }
 
 function readLibrary(book) {
@@ -30,6 +30,10 @@ function readLibrary(book) {
         let read = document.createElement('H4');
         let by =document.createElement('H4');
         let remove = document.createElement('INPUT');
+        let container = document.createElement('DIV');
+        let border= document.createElement('DIV');
+        container.classList.add('cont');
+        border.classList.add('bor');
         remove.type = 'image';
         remove.src = "imgs/cross-icons-collection/cancel.png";
         remove.classList.add('remove');
@@ -39,7 +43,9 @@ function readLibrary(book) {
         author.classList.add('author');
         pages.textContent = `${book.pages} pages`;
         pages.classList.add('pages');
-        changeCardColor(book.read, card);
+        changeCardColor(book.read, border);
+        container.appendChild(border);
+        container.appendChild(card);
         card.appendChild(title);
         card.appendChild(by);
         card.appendChild(author);
@@ -51,7 +57,7 @@ function readLibrary(book) {
         card.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
         });
-        document.querySelector('main').prepend(card);
+        document.querySelector('main').prepend(container);
 }
 
 const addBook = document.querySelector('main button:not(.remove)');
