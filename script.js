@@ -15,28 +15,38 @@ function addToLibrary(newBook) {
     readLibrary(newBook)
 }
 
+function changeCardColor(read, card) {
+        if(read === "read") 
+            card.classList.add('read');
+        else 
+            card.classList.add('not-read');
+}
+
 function readLibrary(book) {
         let card = document.createElement('DIV');
         let title = document.createElement('H2');
         let author = document.createElement('H4');
         let pages = document.createElement('H4');
-        let read = document.createElement('DIV');
+        let read = document.createElement('H4');
+        let by =document.createElement('H4');
         let remove = document.createElement('INPUT');
         remove.type = 'image';
-        remove.src = "url('./imgs/x/cancel-black')";
-        title.textContent = book.title;
-        author.textContent = book.author;
-        pages.textContent = book.pages;
-        read.textContent = book.read;
-        if(book.read === "read") card.classList.add('read');
-        else card.classList.add('not-read');
-        remove.textContent = 'Remove';
+        remove.src = "imgs/cross-icons-collection/cancel.png";
         remove.classList.add('remove');
+        title.textContent = book.title;
+        by.textContent = `by`;
+        author.textContent = `${book.author}`;
+        author.classList.add('author');
+        pages.textContent = `${book.pages} pages`;
+        pages.classList.add('pages');
+        changeCardColor(book.read, card);
         card.appendChild(title);
+        card.appendChild(by);
         card.appendChild(author);
         card.appendChild(pages);
         card.appendChild(read);
         card.appendChild(remove);
+        card.style.position = 'relative';
         card.classList.add('card');
         card.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
@@ -46,19 +56,14 @@ function readLibrary(book) {
 
 const addBook = document.querySelector('main button:not(.remove)');
 const form = document.querySelector('form');
-const mask = document.querySelector('.mask');
 const submitButton = document.querySelector('form button');
 const body = document.querySelector('body');
+const dialog = document.querySelector('dialog');
+
 addBook.addEventListener('click', (e) => {
-    form.style.display = 'grid';
-    mask.style.display = 'block';
-    body.style.setProperty('overflow', 'hidden');
+    dialog.showModal();
 })
-mask.addEventListener('click', (e) => {
-    form.style.display = 'none';
-    mask.style.display = 'none';
-    body.style.removeProperty('overflow', 'hidden');
-})
+
 submitButton.addEventListener('click', (e) => {
     let form = document.querySelector('form');
     let title = document.getElementById('book_title');
@@ -71,7 +76,10 @@ submitButton.addEventListener('click', (e) => {
     addToLibrary(book);
     form.reset();
 })
+
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, true);
 addToLibrary(theHobbit);
 let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
 addToLibrary(anaAlex);
+let harry = new Book("Harry Potter and Order of the Phoenix", "J.K. Rowling", 766, true);
+addToLibrary(harry);
