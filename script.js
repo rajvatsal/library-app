@@ -11,22 +11,25 @@ Book.prototype.info = function () {
 }
 
 function addToLibrary(newBook) {
-    myLibrary.push(...newBook);
+    myLibrary.push(newBook);
     readLibrary(newBook)
 }
 
-function readLibrary(newBook) {
-    for(let book of newBook) {
+function readLibrary(book) {
         let card = document.createElement('DIV');
         let title = document.createElement('H2');
         let author = document.createElement('H4');
         let pages = document.createElement('H4');
         let read = document.createElement('DIV');
-        let remove = document.createElement('BUTTON');
+        let remove = document.createElement('INPUT');
+        remove.type = 'image';
+        remove.src = "url('./imgs/x/cancel-black')";
         title.textContent = book.title;
         author.textContent = book.author;
         pages.textContent = book.pages;
         read.textContent = book.read;
+        if(book.read === "read") card.classList.add('read');
+        else card.classList.add('not-read');
         remove.textContent = 'Remove';
         remove.classList.add('remove');
         card.appendChild(title);
@@ -39,9 +42,7 @@ function readLibrary(newBook) {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
         });
         document.querySelector('main').prepend(card);
-    }
 }
-
 
 const addBook = document.querySelector('main button:not(.remove)');
 const form = document.querySelector('form');
@@ -67,6 +68,10 @@ submitButton.addEventListener('click', (e) => {
     if(!title.value || !author.value || !pages.value) return
     else e.preventDefault();
     let book = new Book(title.value, author.value, pages.value, read);
-    addToLibrary([book]);
+    addToLibrary(book);
     form.reset();
 })
+let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, true);
+addToLibrary(theHobbit);
+let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
+addToLibrary(anaAlex);
