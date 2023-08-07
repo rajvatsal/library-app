@@ -64,6 +64,12 @@ const submitButton = document.querySelector('form button');
 const body = document.querySelector('body');
 const dialog = document.querySelector('dialog');
 const formRemove = document.querySelector('form :first-child');
+const root = document.querySelector(':root');
+const themeChange = document.querySelector('.theme');
+
+themeChange.addEventListener('click', (e) => {
+    root.classList.toggle('dark');
+})
 
 formRemove.addEventListener('click', (e) => {
     dialog.close();
