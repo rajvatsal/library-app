@@ -77,7 +77,7 @@
     --not-read: linear-gradient(135deg, #f7b42c 0%, #fc575e 74%);
     --plus-image: transparent;
     --remove-color: url('imgs/cross-icons-collection/cancel-white.png');
-    --form-width: min(95vw, 350px);
+    --form-width: min(85vw, 350px);
 }
 
 :root.dark{
