@@ -92,9 +92,5 @@ submitButton.addEventListener('click', (e) => {
     form.reset();
 })
 
-let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 255, true);
-addToLibrary(theHobbit);
 let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
 addToLibrary(anaAlex);
-let harry = new Book("Harry Potter and Order of the Phoenix", "J.K. Rowling", 766, true);
-addToLibrary(harry);
