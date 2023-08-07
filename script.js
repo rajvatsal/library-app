@@ -35,7 +35,7 @@ function readLibrary(book) {
         container.classList.add('cont');
         border.classList.add('bor');
         remove.type = 'image';
-        remove.src = "imgs/cross-icons-collection/cancel.png";
+        remove.src = "imgs/cross-icons-collection/cancel-white.png";
         remove.classList.add('remove');
         title.textContent = book.title;
         by.textContent = `by`;
@@ -54,7 +54,7 @@ function readLibrary(book) {
         card.appendChild(remove);
         card.style.position = 'relative';
         card.classList.add('card');
-        card.addEventListener('mousedown', (e) => {
+        container.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
         });
         document.querySelector('main').prepend(container);
