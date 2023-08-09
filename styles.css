@@ -1,49 +1,5 @@
 
 @font-face {
-    font-family: 'coolveticacompressed_heavy';
-    src: url('fonts/coolvetica/coolvetica_compressed_hv-webfont.woff2') format('woff2'),
-         url('fonts/coolvetica/coolvetica_compressed_hv-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'coolveticacondensed_regular';
-    src: url('fonts/coolvetica/coolvetica_condensed_rg-webfont.woff2') format('woff2'),
-         url('fonts/coolvetica/coolvetica_condensed_rg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'coolveticacrammed_regular';
-    src: url('fonts/coolvetica/coolvetica_crammed_rg-webfont.woff2') format('woff2'),
-         url('fonts/coolvetica/coolvetica_crammed_rg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'coolveticaregular';
-    src: url('fonts/coolvetica/coolvetica_rg-webfont.woff2') format('woff2'),
-         url('fonts/coolvetica/coolvetica_rg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'coolveticaregular_italic';
-    src: url('fonts/coolvetica/coolvetica_rg_it-webfont.woff2') format('woff2'),
-         url('fonts/coolvetica/coolvetica_rg_it-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-/*coolvetica end*/
-
-@font-face {
     font-family: 'mouse';
     src: url('fonts/mouse/mousememoirs-regular-webfont.woff') format('woff'),
          url('fonts/mouse/mousememoirs-regular-webfont.woff2') format('woff2');
@@ -67,6 +23,8 @@
     --remove-color: url('imgs/cross-icons-collection/cancel-white.png');
     --form-width: min(85vw, 350px);
     --main-padding: 40px min(80px, 20vw);
+    --font: 'PT Sans Narrow', sans-serif;
+
 }
 
 :root.dark{
@@ -81,11 +39,12 @@
     --remove-color: url('imgs/cross-icons-collection/cancel.png');
     --form-width: min(85vw, 350px);
     --main-padding: 40px min(80px, 20vw);
+    --font: 'Preahvihear', sans-serif;
 }
 
 body {
     background-image: var(--body-image);
-    min-height: calc(100vh + 92px); /* To makes sure the footer is always hidden from the main view */
+    min-height: calc(100vh + 87px); /* To makes sure the footer is always hidden from the main view */
     display: flex;
     flex-direction: column;
 }
@@ -156,7 +115,7 @@ form>:first-child:hover,
 form button[type="submit"] {
     cursor: pointer;
     border: 0;
-    font-family: "coolveticaregular";
+    font-family: var(--font);
 }
 
 form button[type="submit"] {
@@ -182,7 +141,7 @@ header>h1 {
 
 .card h4 {
     font-size: 13px;
-    font-family: 'coolveticaregular';
+    font-family: var(--font);
 }
 main .author {
     margin: 5px auto;
@@ -204,7 +163,7 @@ form {
     height: 80vh;
     position: relative;
     color: black;
-    font-family: coolveticaregular, Sans-serif, monospace;
+    font-family: var(--font), Sans-serif, monospace;
     font-size: 15px;
     align-items: center;
 }
@@ -267,7 +226,7 @@ footer {
 }
 
 footer h1 {
-    font-family: coolveticaregular;
+    font-family: var(--font);
     margin-bottom: 10px;
 }
 
