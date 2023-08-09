@@ -205,7 +205,7 @@ main>button>span {
     background-image: var(--plus-image);
     aspect-ratio: 1/1;
     background-size: cover;
-    /* Solves jagged edges in chrome*/
+    /* Solves jagged edges in chrome it's a bug in anti aliasing */
     -webkit-transform-style: preserve-3d;
     -webkit-transform: rotateZ(0.05deg);
 }
