@@ -241,6 +241,7 @@ main>button>span {
     background-image: var(--plus-image);
     aspect-ratio: 1/1;
     background-size: cover;
+    -webkit-backface-visibility: hidden;/* Image was jagged in chrome*/
 }
 
 span.theme {
