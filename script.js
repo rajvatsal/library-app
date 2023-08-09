@@ -80,7 +80,6 @@ addBook.addEventListener('click', (e) => {
 })
 
 submitButton.addEventListener('click', (e) => {
-    let form = document.querySelector('form');
     let title = document.getElementById('book_title');
     let author = document.getElementById('book_author');
     let pages = document.getElementById('book_pages');
@@ -89,7 +88,7 @@ submitButton.addEventListener('click', (e) => {
     else e.preventDefault();
     let book = new Book(title.value, author.value, pages.value, read);
     addToLibrary(book);
-    form.reset();
+    dialog.close();
 })
 
 let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
