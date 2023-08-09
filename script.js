@@ -88,6 +88,7 @@ submitButton.addEventListener('click', (e) => {
     else e.preventDefault();
     let book = new Book(title.value, author.value, pages.value, read);
     addToLibrary(book);
+    form.reset();
     dialog.close();
 })
 
