@@ -48,7 +48,7 @@
 
 body {
     background-image: var(--body-image);
-    min-height: calc(100vh + 87px); /* To makes sure the footer is always hidden from the main view */
+    min-height: calc(100vh + 91px); /* To makes sure the footer is always hidden from the main view */
     display: flex;
     flex-direction: column;
 }
