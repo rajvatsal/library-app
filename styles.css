@@ -84,6 +84,10 @@ main {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.377);
 }
 
+.cont:hover {
+    cursor: pointer;
+}
+
 .cont {
     position: relative;
 }
@@ -101,7 +105,7 @@ main {
     background-image: var(--read); /*linear-gradient(135deg, rgb(255, 242, 0), rgb(0, 255, 132));*/
 }
 
-.bor.not-read {
+.bor{
     background-image: var(--not-read);/*linear-gradient(135deg, #ffa600, #ff00a5);*/
 }
 

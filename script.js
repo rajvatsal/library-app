@@ -4,7 +4,7 @@ function Book(title, author, pages, read) {
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.read = read? "read": "not read yet";
+    this.read = read;
 }
 Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}.`
@@ -16,10 +16,8 @@ function addToLibrary(newBook) {
 }
 
 function changeCardColor(read, border) {
-        if(read === "read") 
+        if(read) 
             border.classList.add('read');
-        else 
-            border.classList.add('not-read');
 }
 
 function readLibrary(book) {
@@ -54,6 +52,8 @@ function readLibrary(book) {
         card.classList.add('card');
         container.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
+            else
+                document.querySelector('.bor').classList.toggle('read');
         });
         document.querySelector('main').prepend(container);
 }
@@ -92,5 +92,5 @@ submitButton.addEventListener('click', (e) => {
     dialog.close();
 })
 
-/*let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
-addToLibrary(anaAlex);*/
+let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
+addToLibrary(anaAlex);
