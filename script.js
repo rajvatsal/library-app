@@ -91,3 +91,6 @@ submitButton.addEventListener('click', (e) => {
     form.reset();
     dialog.close();
 })
+
+/*let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
+addToLibrary(anaAlex);*/
