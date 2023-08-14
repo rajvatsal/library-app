@@ -40,7 +40,7 @@ function readLibrary(book) {
         title.textContent = book.title;
         by.textContent = `by`;
         author.textContent = `${book.author}`;
-        pages.textContent = `${book.pages} PAGES`;
+        pages.textContent = `${book.pages}`;
         changeCardColor(book.read, border);
         container.appendChild(border);
         container.appendChild(card);
