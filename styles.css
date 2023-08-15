@@ -241,7 +241,7 @@ footer {
     font-family: var(--font);
 }
 
-footer h1 {
+footer h2 {
     font-family: var(--font);
     margin-bottom: 10px;
 }
