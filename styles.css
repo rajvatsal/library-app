@@ -143,7 +143,9 @@ header>h1 {
     text-align: center;
     color: var(--heading-text);
     padding: 40px 0 50px;
-    font-family: 'allen';
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'allen', Helvetica, Roboto, sans-serif;
 }
 
 .card h2 {
@@ -186,7 +188,7 @@ form>h1 {
     margin-bottom: 20px;
     text-align: center;
     vertical-align: middle;
-    font-family: 'mouse';
+    font-family: 'mouse', Helvetica, Roboto, sans-serif;
     grid-column: 1/-1;
 }
 
