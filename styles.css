@@ -143,8 +143,6 @@ header>h1 {
     text-align: center;
     color: var(--heading-text);
     padding: 40px 0 50px;
-    font-weight: bold;
-    font-style: italic;
     font-family: 'allen', Helvetica, Roboto, sans-serif;
 }
 
