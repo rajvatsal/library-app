@@ -53,7 +53,7 @@ function readLibrary(book) {
         container.addEventListener('mousedown', (e) => {
             if(e.target.classList.contains('remove')) e.currentTarget.remove();
             else
-                document.querySelector('.bor').classList.toggle('read');
+                e.currentTarget.querySelector('.bor').classList.toggle('read');
         });
         document.querySelector('main').prepend(container);
 }
