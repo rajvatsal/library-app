@@ -67,6 +67,9 @@ const dialog = document.querySelector("dialog");
 const formRemove = document.querySelector("form :first-child");
 const root = document.querySelector(":root");
 const themeChange = document.querySelector(".theme");
+const title = document.getElementById("book_title");
+const author = document.getElementById("book_author");
+const pages = document.getElementById("book_pages");
 
 themeChange.addEventListener("click", (e) => {
 	root.classList.toggle("dark");
@@ -80,17 +83,34 @@ addBook.addEventListener("click", (e) => {
 	dialog.showModal();
 });
 
-submitButton.addEventListener("click", (e) => {
-	let title = document.getElementById("book_title");
-	let author = document.getElementById("book_author");
-	let pages = document.getElementById("book_pages");
-	let read = document.getElementById("book_read").checked;
-	if (!title.value || !author.value || !pages.value) return;
-	else e.preventDefault();
+function doStuff(title, author, pages) {
 	let book = new Book(title.value, author.value, pages.value, read);
 	addToLibrary(book);
 	form.reset();
 	dialog.close();
+}
+
+let previousValue = "";
+
+function removeRequiredPopup() {
+	if (previousValue === "") this.setCustomValidity("");
+	previousValue = this.value;
+}
+
+title.addEventListener("input", removeRequiredPopup);
+author.addEventListener("input", removeRequiredPopup);
+pages.addEventListener("input", removeRequiredPopup);
+
+submitButton.addEventListener("click", (e) => {
+	e.preventDefault();
+	let read = document.getElementById("book_read").checked;
+	if (
+		isInvalid(title, "Book") ||
+		isInvalid(author, "Author") ||
+		isInvalid(pages, "Number of pages")
+	)
+		return;
+	doStuff(title, author, pages);
 });
 
 /*let anaAlex = new Book("Anabasis of Alexander", "Xenophon", 238, false);
