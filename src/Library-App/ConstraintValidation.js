@@ -1,4 +1,4 @@
-function isInvalid(ip, message) {
+export default function isInvalid(ip, message) {
 	let state;
 	if (ip.validity.valueMissing) {
 		ip.setCustomValidity(`${message} name is required`);

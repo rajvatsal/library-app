@@ -1,4 +1,4 @@
-@import url("./utility.css");
+@import url("./Utilities/utility.css");
 
 body {
   background-image: var(--body-image);
