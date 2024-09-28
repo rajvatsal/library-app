@@ -1,0 +1,163 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url("./fonts/Dosis/stylesheet.css");
+@import url("./fonts/mouse/stylesheet.css");
+@import url("./fonts/allen_bold/stylesheet.css");
+
+:root {
+  --theme-change: url("imgs/theme-icons/moon.png");
+  --heading-text: black;
+  --body-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  --card-text: white;
+  --card-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  --read: linear-gradient(185deg, #2bd600 0%, #a2d240 74%);
+  --not-read: linear-gradient(135deg, #f7b42c 0%, #fc575e 74%);
+  --plus-image: url("imgs/add/add.png");
+  --remove-color: url("imgs/cross-icons-collection/cancel-white.png");
+  --form-width: min(85vw, 350px);
+  --main-padding: 40px min(80px, 20vw);
+  --font: "dosisbold", "Noto Sans", sans-serif;
+}
+
+:root.dark {
+  --theme-change: url("imgs/theme-icons/light.png");
+  --heading-text: white;
+  --body-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  --card-text: black;
+  --card-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  --read: linear-gradient(135deg, rgb(255, 242, 0), rgb(0, 255, 132));
+  --not-read: linear-gradient(135deg, #ffa600, #ff00a5);
+  --plus-image: url("imgs/add/add-light.png");
+  --remove-color: url("imgs/cross-icons-collection/cancel.png");
+  --form-width: min(85vw, 350px);
+  --main-padding: 40px min(80px, 20vw);
+  --font: dosisbold, "Noto Sans", sans-serif;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
