@@ -28,11 +28,12 @@ export default function displayBook({ title, author, pages, read }) {
 
 	// Add event listeners
 	container.addEventListener("mousedown", (e) => {
+		const books = [...document.getElementsByClassName("cont")];
+		const index = books.indexOf(e.currentTarget);
 		if (e.target.classList.contains("remove")) {
 			e.currentTarget.remove();
+			emit("RemoveBookPre", index);
 		} else {
-			const books = [...document.getElementsByClassName("cont")];
-			const index = books.indexOf(e.currentTarget);
 			emit("ToggleStatusPre", { index, target: border });
 		}
 	});

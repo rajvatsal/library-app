@@ -2,6 +2,12 @@ import displayBook from "./DisplayBook.js";
 import { emit, on, off } from "../Utilities/PubSub.js";
 import "./AddBook.js";
 
+function displaySavedData(books) {
+	for (const book of books) {
+		displayBook(book);
+	}
+}
+
 // Toogle theme
 const root = document.querySelector(":root");
 const themeChange = document.querySelector(".theme");
@@ -22,3 +28,4 @@ addBook.addEventListener("click", () => {
 });
 
 on("AddBookPost", displayBook);
+on("StartAppPost", displaySavedData);
