@@ -173,8 +173,7 @@ main > button > span {
   aspect-ratio: 1/1;
   background-size: cover;
   /* Solves jagged edges in chrome it's a bug in anti aliasing */
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: rotateZ(0.05deg);
+  will-change: scale;
 }
 
 span.theme {
