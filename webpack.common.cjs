@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: {
-		app: "./src/Library.js",
+		app: "./src/PersonalLIB.js",
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),

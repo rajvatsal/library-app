@@ -1,8 +1,8 @@
 {
-	"name": "Library",
+	"name": "PersonalLIB",
 	"version": "1.0.0",
 	"description": "An app to keep track of books you've read",
-	"main": "./src/Library.js",
+	"main": "./src/PersonalLIB.js",
 	"type": "module",
 	"scripts": {
 		"test": "jest",
