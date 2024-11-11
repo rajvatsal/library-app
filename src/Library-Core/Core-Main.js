@@ -1,4 +1,4 @@
-import Library from "./LibraryClass.js";
+import Library from "./Library.js";
 import { emit, on, off } from "../Utilities/PubSub.js";
 
 function retrieveSavedData() {
