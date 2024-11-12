@@ -1,4 +1,4 @@
-// This module adds event listner for adding books
+// This module exports event listner for adding books
 
 import removeRequiredPopup from "./RemoveRequiredPopup.js";
 import isInvalid from "./ConstraintValidation.js";
@@ -14,8 +14,7 @@ title.addEventListener("input", removeRequiredPopup);
 author.addEventListener("input", removeRequiredPopup);
 pages.addEventListener("input", removeRequiredPopup);
 
-const submitButton = document.querySelector('form button[type="submit"]');
-submitButton.addEventListener("click", (e) => {
+export default function addBookClickHandler() {
 	e.preventDefault();
 	const read = document.getElementById("book_read").checked;
 	if (
@@ -27,4 +26,4 @@ submitButton.addEventListener("click", (e) => {
 	emit("AddBookPre", { title, author, pages, read });
 	form.reset();
 	dialog.close();
-});
+}
