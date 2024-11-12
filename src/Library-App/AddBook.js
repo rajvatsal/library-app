@@ -14,7 +14,7 @@ title.addEventListener("input", removeRequiredPopup);
 author.addEventListener("input", removeRequiredPopup);
 pages.addEventListener("input", removeRequiredPopup);
 
-export default function addBookClickHandler() {
+function addBookClickHandler() {
 	e.preventDefault();
 	const read = document.getElementById("book_read").checked;
 	if (
@@ -27,3 +27,6 @@ export default function addBookClickHandler() {
 	form.reset();
 	dialog.close();
 }
+
+const submitButton = document.querySelector('form button[type="submit"]');
+submitButton.addEventListener("click", addBookClickHandler);

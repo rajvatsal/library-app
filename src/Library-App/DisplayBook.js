@@ -3,7 +3,7 @@ import { emit, on, off } from "../Utilities/PubSub.js";
 
 const main = document.querySelector("main");
 
-export default function displayBook({ title, author, pages, read }) {
+function displayBook({ title, author, pages, read }) {
 	const containerHTML = `
   <div class="cont">
     <div class="bor"></div>
@@ -38,3 +38,5 @@ export default function displayBook({ title, author, pages, read }) {
 		}
 	});
 }
+
+on("AddBookPost", displayBook);

@@ -1,6 +1,6 @@
-import displayBook from "./DisplayBook.js";
+import "./DisplayBook.js";
 import { emit, on, off } from "../Utilities/PubSub.js";
-import addBookClickHandler from "./AddBook.js";
+import "./AddBook.js";
 
 function displaySavedData(books) {
 	for (const book of books) {
@@ -27,8 +27,4 @@ addBook.addEventListener("click", () => {
 	dialog.showModal();
 });
 
-const submitButton = document.querySelector('form button[type="submit"]');
-submitButton.addEventListener("click", addBookClickHandler);
-
-on("AddBookPost", displayBook);
 on("StartAppPost", displaySavedData);
