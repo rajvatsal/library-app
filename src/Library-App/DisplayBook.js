@@ -3,6 +3,18 @@ import { emit, on, off } from "../Utilities/PubSub.js";
 
 const main = document.querySelector("main");
 
+function removeBookClickHandler(e) {
+	console.log(e);
+	const books = [...document.getElementsByClassName("cont")];
+	const index = books.indexOf(e.currentTarget);
+	if (e.target.classList.contains("remove")) {
+		e.currentTarget.remove();
+		emit("RemoveBookPre", index);
+	} else {
+		emit("ToggleStatusPre", { index, target: border });
+	}
+}
+
 function displayBook({ title, author, pages, read }) {
 	const containerHTML = `
   <div class="cont">
@@ -27,16 +39,7 @@ function displayBook({ title, author, pages, read }) {
 	showStatus({ status: read, target: border });
 
 	// Add event listeners
-	container.addEventListener("mousedown", (e) => {
-		const books = [...document.getElementsByClassName("cont")];
-		const index = books.indexOf(e.currentTarget);
-		if (e.target.classList.contains("remove")) {
-			e.currentTarget.remove();
-			emit("RemoveBookPre", index);
-		} else {
-			emit("ToggleStatusPre", { index, target: border });
-		}
-	});
+	container.addEventListener("mousedown", removeBookClickHandler);
 }
 
 on("AddBookPost", displayBook);

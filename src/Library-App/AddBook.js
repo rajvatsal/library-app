@@ -14,7 +14,7 @@ title.addEventListener("input", removeRequiredPopup);
 author.addEventListener("input", removeRequiredPopup);
 pages.addEventListener("input", removeRequiredPopup);
 
-function addBookClickHandler() {
+function addBookClickHandler(e) {
 	e.preventDefault();
 	const read = document.getElementById("book_read").checked;
 	if (
