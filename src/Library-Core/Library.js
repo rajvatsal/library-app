@@ -18,6 +18,6 @@ export default class Library {
 	}
 
 	getBook(i) {
-		return this.#books[i].slice(0);
+		return this.#books[i];
 	}
 }
